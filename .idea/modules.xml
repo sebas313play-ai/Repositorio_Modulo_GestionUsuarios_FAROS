@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/gestionusuarios.iml" filepath="$PROJECT_DIR$/.idea/gestionusuarios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/cristian.iml" filepath="$PROJECT_DIR$/.idea/cristian.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gestionusuarios/gestionusuarios.iml" filepath="$PROJECT_DIR$/gestionusuarios/gestionusuarios.iml" />
     </modules>
   </component>
 </project>
