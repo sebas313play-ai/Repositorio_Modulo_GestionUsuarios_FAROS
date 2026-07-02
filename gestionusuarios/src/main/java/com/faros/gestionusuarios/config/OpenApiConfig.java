@@ -1,33 +1,60 @@
 package com.faros.gestionusuarios.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
-
 import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.security.SecurityRequirement;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 @Configuration
-
 public class OpenApiConfig {
 
     @Bean
+    public OpenAPI farosApi() {
 
-    public OpenAPI farosApi(){
+        final String securitySchemeName = "bearerAuth";
 
         return new OpenAPI()
 
-                .info(
+                .info(new Info()
 
-                        new Info()
+                        .title("FAROS - Gestión de Usuarios")
 
-                                .title("FAROS")
+                        .version("1.0")
 
-                                .description(
-                                        "Gestión de Usuarios"
-                                )
+                        .description("API REST para la gestión de usuarios.")
 
-                                .version("1.0")
+                        .contact(new Contact()
 
+                                .name("Equipo FAROS")
+
+                                .email("faros@correo.com")
+                        )
+                )
+
+                .addSecurityItem(
+
+                        new SecurityRequirement()
+
+                                .addList(securitySchemeName)
+                )
+
+                .schemaRequirement(
+
+                        securitySchemeName,
+
+                        new SecurityScheme()
+
+                                .name("Authorization")
+
+                                .type(SecurityScheme.Type.HTTP)
+
+                                .scheme("bearer")
+
+                                .bearerFormat("JWT")
                 );
 
     }

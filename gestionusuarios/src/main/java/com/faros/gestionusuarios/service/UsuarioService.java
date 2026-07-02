@@ -1,6 +1,7 @@
 package com.faros.gestionusuarios.service;
 
-import com.faros.gestionusuarios.dto.*;
+import com.faros.gestionusuarios.dto.UsuarioRequest;
+import com.faros.gestionusuarios.dto.UsuarioResponse;
 
 import java.util.List;
 
@@ -12,8 +13,10 @@ public interface UsuarioService {
 
     UsuarioResponse buscar(Long id);
 
-    UsuarioResponse actualizar(Long id,
-            UsuarioRequest request);
+    UsuarioResponse actualizar(
+            Long id,
+            UsuarioRequest request
+    );
 
     void eliminar(Long id);
 
